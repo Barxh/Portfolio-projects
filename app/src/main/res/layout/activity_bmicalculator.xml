@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.BMICalculatorActivity"
+    android:padding="15dp">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_bmi"
+
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:background="@color/white"
+        android:theme="@style/ToolbarTheme"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:id="@+id/input_layout_weight"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar_bmi"
+        android:layout_marginTop="20dp"
+        app:boxStrokeColor="@color/colorAccent"
+        app:hintTextColor="@color/colorAccent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="WEIGHT (in kg)"
+            android:id="@+id/edit_text_weight"
+
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/input_layout_weight"
+        android:layout_marginTop="20dp"
+        android:id="@+id/input_layout_height"
+        app:boxStrokeColor="@color/colorAccent"
+        app:hintTextColor="@color/colorAccent"
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_text_height"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="HEIGHT (in cm)"
+
+            />
+
+
+    </com.google.android.material.textfield.TextInputLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:lineSpacingExtra="15sp"
+        tools:text="Hello\nWorld"
+        android:layout_below="@id/input_layout_height"
+        android:layout_marginTop="50dp"
+        android:textSize="20sp"
+        android:visibility="invisible"
+        tools:visibility="visible"
+        android:textAlignment="center"
+        android:id="@+id/text_view_result"
+        android:textColor="#939393"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="Hello\nWorld"
+        android:layout_below="@id/text_view_result"
+        android:layout_marginTop="10dp"
+        android:textSize="16sp"
+        android:visibility="invisible"
+        tools:visibility="visible"
+        android:textAlignment="center"
+        android:id="@+id/text_view_advice"
+        android:textColor="#939393"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text_view_advice"
+        android:layout_marginTop="25dp"
+        android:id="@+id/button_calculate"
+        android:text="CALCULATE"
+        android:background="@color/colorAccent"
+        />
+
+</RelativeLayout>

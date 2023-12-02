@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.ExerciseActivity">
+
+    <androidx.appcompat.widget.Toolbar
+    android:id="@+id/toolbar_exercise"
+    android:layout_width="match_parent"
+    android:layout_height="?android:attr/actionBarSize"
+    android:background="@color/white"
+    android:theme="@style/ToolbarTheme"
+    app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/Title"
+        android:text="GET READY FOR"
+        android:textSize="22sp"
+        android:textColor="@color/colorAccent"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/layout_progress_bar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <FrameLayout
+        android:id="@+id/layout_progress_bar"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/buttom_border"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar_exercise">
+
+        <ProgressBar
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:id="@+id/progress_bar"
+            android:layout_gravity="center"
+            android:rotation="-90"
+            android:progress="100"
+            android:max="10"
+            android:background="@drawable/progress_bar_grey"
+            android:progressDrawable="@drawable/progress_bar"
+            android:indeterminate="false"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"/>
+
+
+        <LinearLayout
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:background="@drawable/accent_background"
+            android:gravity="center">
+            <TextView
+                android:id="@+id/text_view_timer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"/>
+        </LinearLayout>
+
+
+    </FrameLayout>
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textSize="16dp"
+        android:text="UPCOMING EXERCISE:"
+        android:id="@+id/text_view_upcoming"
+        app:layout_constraintTop_toBottomOf="@id/layout_progress_bar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+    <TextView
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:id="@+id/text_view_next_exercise"
+        app:layout_constraintTop_toBottomOf="@id/text_view_upcoming"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <ImageView
+        app:layout_constraintTop_toBottomOf="@id/toolbar_exercise"
+        app:layout_constraintBottom_toTopOf="@id/text_view_exercise_name"
+        android:id="@+id/image_exercise"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:scaleType="fitXY"
+        android:visibility="invisible"
+        tools:src="@drawable/ic_jumping_jacks"
+        tools:visibility="visible" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/text_view_exercise_name"
+        android:textColor="@color/colorAccent"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        tools:visibility="visible"
+        tools:text="Hello"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:visibility="invisible"
+        app:layout_constraintTop_toBottomOf="@id/image_exercise"
+
+        />
+
+    <FrameLayout
+        android:id="@+id/layout_progress_bar_exercise"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@drawable/buttom_border"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintBottom_toTopOf="@id/recycler_view_exercise_status"
+        app:layout_constraintTop_toBottomOf="@id/text_view_exercise_name"
+        tools:visibility="visible">
+
+        <ProgressBar
+            android:id="@+id/progress_bar_exercise"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:background="@drawable/progress_bar_grey"
+            android:indeterminate="false"
+            android:max="30"
+            android:progress="100"
+            android:progressDrawable="@drawable/progress_bar"
+            android:rotation="-90" />
+
+        <LinearLayout
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:background="@drawable/accent_background"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/text_view_timer_exercise"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                tools:text="30" />
+        </LinearLayout>
+
+    </FrameLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/recycler_view_exercise_status"
+        android:layout_margin="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:listitem="@layout/item_of_recycle_view"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
